@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "plans")
+@Table(name = "schedules")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -37,5 +37,5 @@ public class Schedules {
     private Status status = Status.PENDING;
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt;
 }

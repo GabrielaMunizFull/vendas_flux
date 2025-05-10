@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "sales")
@@ -40,5 +41,9 @@ public class Sales {
     private Integer statusScheduleB2b; // 1 = Agendado, 2 = Pendente, 3 = Concluído
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt;
+
+    // Relacionamento com a tabela de agendamentos (schedules)
+    @OneToMany(mappedBy = "sales", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Schedules> schedules;
 }

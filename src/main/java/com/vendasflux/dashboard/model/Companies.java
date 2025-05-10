@@ -33,5 +33,5 @@ public class Companies {
     private Classification classification;
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt;
 }
