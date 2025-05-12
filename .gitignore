@@ -8,7 +8,7 @@ build/
 
 # Arquivos de configuração do Spring (não incluir application.properties)
 # Isso garante que você não versiona o arquivo de propriedades com informações sensíveis
-/src/main/resources/application.properties
+#/src/main/resources/application.properties
 
 ### STS (Spring Tool Suite) ###
 .apt_generated

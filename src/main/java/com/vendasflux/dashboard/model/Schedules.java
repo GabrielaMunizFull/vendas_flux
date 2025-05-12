@@ -34,7 +34,7 @@ public class Schedules {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Status status = Status.PENDING;
+    private Status status;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
