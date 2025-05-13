@@ -4,13 +4,21 @@ plugins {
 	id 'java'
 }
 
-group = 'com.seuprojeto'
+group = 'com.vendasflux'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 repositories {
 	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' } // Repositório Spring Milestone (caso precise de versões mais recentes)
 }
+
+dependencyManagement {
+	imports {
+		mavenBom 'org.springframework.cloud:spring-cloud-dependencies:2023.0.1'
+	}
+}
+
 
 dependencies {
 	// Spring Boot Starter Web
@@ -28,6 +36,12 @@ dependencies {
 
 	// Testes (opcional)
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'javax.annotation:javax.annotation-api:1.3.2'
+
+	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+
+
 }
 
 test {

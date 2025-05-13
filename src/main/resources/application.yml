@@ -1,0 +1,7 @@
+spring:
+  config:
+    import: "configserver:https://config-server-production.up.railway.app"
+  application:
+    name: vendas-flux-backend
+  profiles:
+    active: dev

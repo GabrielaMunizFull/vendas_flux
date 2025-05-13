@@ -23,7 +23,7 @@ public interface SalesRepository extends JpaRepository<Sales, Long> {
             + "AND (:startDate IS NULL OR sc.scheduledDatetime >= :startDate) "
             + "AND (:endDate IS NULL OR sc.scheduledDatetime <= :endDate)"
     )
-    List<ListSalesDashboardDto> findSalesDashboardData(String status,
+    List<ListSalesDashboardDto> findSalesDashboardData(Schedules.Status status,
                                                        LocalDateTime startDate,
                                                        LocalDateTime endDate);
 

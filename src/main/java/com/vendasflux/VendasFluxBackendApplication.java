@@ -9,5 +9,4 @@ public class VendasFluxBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(VendasFluxBackendApplication.class, args);
 	}
-
 }

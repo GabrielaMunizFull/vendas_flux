@@ -15,11 +15,15 @@ public class SalesService {
     @Autowired
     private SalesRepository repository;
 
-    public List <ListSalesDashboardDto>  getListSalesDashboard ( String status,
-                                                                 LocalDateTime startDate,
-                                                                 LocalDateTime endDate){
+    public List<ListSalesDashboardDto> getListSalesDashboard(String status,
+                                                             LocalDateTime startDate,
+                                                             LocalDateTime endDate) {
+        // Converte o status de String para o enum Status
+        Schedules.Status statusEnum = Schedules.Status.valueOf(status);
 
-        List <ListSalesDashboardDto> listSalesDashboardDto = repository.findSalesDashboardData(status,startDate,endDate);
+        // Chama o repositório com o Status correto
+        List<ListSalesDashboardDto> listSalesDashboardDto = repository.findSalesDashboardData(statusEnum, startDate, endDate);
         return listSalesDashboardDto;
     }
+
 }
