@@ -5,3 +5,5 @@ spring:
     name: vendas-flux-backend
   profiles:
     active: dev
+server:
+  port: 8081
